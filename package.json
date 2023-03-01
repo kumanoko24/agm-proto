@@ -1,0 +1,21 @@
+{
+  "name": "agm-proto",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "glob": "^9.0.2",
+    "isolated-vm": "^4.4.2",
+    "lodash": "^4.17.21",
+    "nanoid": "3.3.4",
+    "pino": "^8.11.0",
+    "pino-pretty": "^9.4.0",
+    "restana": "^4.9.7"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.2",
+    "pm2": "^5.2.2",
+    "prettier": "^2.8.4"
+  }
+}
