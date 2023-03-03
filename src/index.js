@@ -38,8 +38,9 @@ service.use((req, res, next) => {
   next();
 });
 
+const version = require("../package.json").version;
 service.get("_version", (req, res) => {
-  res.send("0.1", 200);
+  res.send(version, 200);
 });
 
 const tsvDirPath = process.argv[2];
