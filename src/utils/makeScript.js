@@ -16,10 +16,9 @@ function buildContext() {
 }
 
 function makeScript(fname, args, body) {
-  const f = new vm.Script(`
-async function ${fname} (${args.join(
-    ", "
-  )}) { ${body}; } ${fname};`).runInNewContext(buildContext());
+  const f = new vm.Script(
+    `async function ${fname} (${args.join(", ")}) { ${body}; } ${fname};`
+  ).runInNewContext(buildContext());
 
   return f;
 }
