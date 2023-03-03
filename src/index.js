@@ -30,12 +30,16 @@ service.use(
 );
 
 service.use((req, res, next) => {
-  logger.info("req in", {
+  logger.debug("req in", {
     url: req.url,
     method: req.method,
   });
 
   next();
+});
+
+service.get("_version", (req, res) => {
+  res.send("0.1", 200);
 });
 
 const tsvDirPath = process.argv[2];
