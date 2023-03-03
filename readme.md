@@ -31,3 +31,16 @@ Please download the .tsv files from https://docs.google.com/spreadsheets/d/1B3G7
 ```sh
 yarn dev
 ```
+
+### And customize `.env` in project root folder
+
+```
+EXPORT_HTTP_PORT=3333
+DEBUG=FALSE
+```
+
+### Try HTTP Exports
+
+```
+http://localhost:3333/....
+```

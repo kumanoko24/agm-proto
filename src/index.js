@@ -82,7 +82,7 @@ async function start() {
       });
     });
 
-    await service.start(Number(process.env.EXPORT_HTTP_PORT));
+    await service.start(Number(process.env.EXPORT_HTTP_PORT || 3333));
 
     logger.info("HTTP Exports ignited");
   } catch (err) {
