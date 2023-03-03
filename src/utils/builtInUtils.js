@@ -46,6 +46,8 @@ function getBuiltInComputationHelpers() {
     Buffer,
     parseInt,
     parseFloat,
+    ParseInt: parseInt,
+    ParseFloat: parseFloat,
     Math,
     TextEncoder,
     TextDecoder,
@@ -56,6 +58,10 @@ function getBuiltInComputationHelpers() {
     EncodeURI: encodeURI,
     DecodeURIComponent: decodeURIComponent,
     EncodeURIComponent: encodeURIComponent,
+    decodeURI,
+    encodeURI,
+    decodeURIComponent,
+    encodeURIComponent,
     Error,
     String,
     Number,
@@ -69,6 +75,8 @@ function getBuiltInComputationHelpers() {
     Date,
     setImmediate,
     setTimeout,
+    SetImmediate: setImmediate,
+    SetTimeout: setTimeout,
   };
 }
 
@@ -103,6 +111,8 @@ function getBuiltInIOHelpers() {
     Date,
     setImmediate,
     setTimeout,
+    SetImmediate: setImmediate,
+    SetTimeout: setTimeout,
     Event: {
       Emit: null,
       Search: null,

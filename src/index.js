@@ -2,12 +2,7 @@ require("dotenv").config();
 
 const { logger } = require("./utils/logger.js");
 
-const { parseTSVs } = require("./utils/shortTSVParser.js");
-
-const {
-  getBuiltInComputationHelpers,
-  getBuiltInIOHelpers,
-} = require("./utils/builtInUtils.js");
+const { parseTSVsAndGenerateRuntime } = require("./utils/shortTSVParser.js");
 
 const restana = require("restana");
 const bodyParser = require("body-parser");
@@ -22,6 +17,14 @@ const service = restana({
 
 service.use(
   bodyParser.json({
+    type: ["text/json", "application/json"],
+    limit: "1024mb",
+  })
+);
+
+service.use(
+  bodyParser.text({
+    type: ["text/csv", "application/csv"],
     limit: "1024mb",
   })
 );
@@ -35,16 +38,11 @@ service.use((req, res, next) => {
   next();
 });
 
-// parse & save
-// load
-
-// TODO
-
 const tsvDirPath = process.argv[2];
 
 async function start() {
   try {
-    const runtimeObject = await parseTSVs(tsvDirPath);
+    const runtimeObject = await parseTSVsAndGenerateRuntime(tsvDirPath);
 
     runtimeObject.Exports.forEach((exp) => {
       service[exp.method](exp.path, async (req, res) => {
@@ -66,6 +64,10 @@ async function start() {
             result = await f(result);
           }
 
+          if (typeof result === "number") {
+            result = result + "";
+          }
+
           res.send(result, 200, { "content-type": exp.output_content_type });
         } catch (err) {
           logger.error("handler error", err);
@@ -77,7 +79,7 @@ async function start() {
 
     await service.start(Number(process.env.EXPORT_HTTP_PORT));
 
-    logger.info("server ignited");
+    logger.info("HTTP Exports ignited");
   } catch (err) {
     logger.error("start", err);
   }

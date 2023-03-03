@@ -235,7 +235,7 @@ function loadAll(recordObject) {
   return runtimeObject;
 }
 
-async function parseTSVs(dirPath) {
+async function parseTSVsAndGenerateRuntime(dirPath) {
   const recordObject = makeRecordObject();
 
   const tsvGlobPattern = resolve(dirPath, "**", "*.tsv").split(sep).join("/");
@@ -296,4 +296,4 @@ async function parseTSVs(dirPath) {
   return runtimeObject;
 }
 
-module.exports.parseTSVs = parseTSVs;
+module.exports.parseTSVsAndGenerateRuntime = parseTSVsAndGenerateRuntime;
