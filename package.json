@@ -26,7 +26,6 @@
     "restana": "^4.9.7",
     "sequelize": "^6.29.3",
     "tedious": "^15.1.3",
-    "vm2": "^3.9.14",
     "yargs": "^17.7.1",
     "zod": "^3.21.4"
   },
@@ -40,7 +39,7 @@
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.7",
-    "erlpack": "^0.1.4",
+    "erlpack": "discord/erlpack",
     "utf-8-validate": "^6.0.3",
     "zlib-sync": "^0.1.8"
   }

@@ -966,10 +966,9 @@ enquirer@2.3.6:
   dependencies:
     ansi-colors "^4.1.1"
 
-erlpack@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/erlpack/-/erlpack-0.1.4.tgz#018758a53206b8e9ba1f6c58a6766e3ba261a113"
-  integrity sha512-CJYbkEvsB5FqCCu2tLxF1eYKi28PvemC12oqzJ9oO6mDFrFO9G9G7nNJUHhiAyyL9zfXTOJx/tOcrQk+ncD65w==
+erlpack@discord/erlpack:
+  version "0.1.3"
+  resolved "https://codeload.github.com/discord/erlpack/tar.gz/cbe76be04c2210fc9cb6ff95910f0937c1011d04"
   dependencies:
     bindings "^1.5.0"
     nan "^2.15.0"
@@ -3326,7 +3325,7 @@ vizion@~2.2.1:
     ini "^1.3.5"
     js-git "^0.7.8"
 
-vm2@^3.9.14, vm2@^3.9.8:
+vm2@^3.9.8:
   version "3.9.14"
   resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.9.14.tgz#964042b474cf1e6e4f475a39144773cdb9deb734"
   integrity sha512-HgvPHYHeQy8+QhzlFryvSteA4uQLBCOub02mgqdR+0bN/akRZ48TGB1v0aCv7ksyc0HXx16AZtMHKS38alc6TA==
